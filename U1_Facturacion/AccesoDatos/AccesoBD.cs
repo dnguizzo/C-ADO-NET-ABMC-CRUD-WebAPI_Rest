@@ -64,7 +64,7 @@ namespace U1_Facturacion
                 cmdMaestro.CommandType = CommandType.StoredProcedure;
                 // Parametros de entrada
                 cmdMaestro.Parameters.AddWithValue("fecha", ofactura.Fecha);
-                cmdMaestro.Parameters.AddWithValue("id_Tipopago", ofactura.Id_FormaPago);
+                cmdMaestro.Parameters.AddWithValue("id_Tipopago", ofactura.FormaPago.Id_TipoPago);
                 cmdMaestro.Parameters.AddWithValue("cliente", ofactura.Cliente);
                 
                 // Parametros de salida como el iD
@@ -76,16 +76,19 @@ namespace U1_Facturacion
 
 
                 // INsert del Detalle
+                int detalleNro = 1; // Inicializo una variable que me cuenta el id del detalle.
                 SqlCommand comandoDetalle;
-                comandoDetalle = new SqlCommand("SP_insertar_DetalleFacturas", conexion, transaccion);
-                comandoDetalle.CommandType = CommandType.StoredProcedure;
+                
             
                 for (int i = 0; i < ofactura.DetallesFactura.Count; i++) // contamos la cantidad de elementos del objeto list (detalle) de la factura objeto.
                 {
+                    comandoDetalle = new SqlCommand("SP_insertar_DetalleFacturas", conexion, transaccion);
+                    comandoDetalle.CommandType = CommandType.StoredProcedure;
                     comandoDetalle.Parameters.Clear();
+                    comandoDetalle.Parameters.AddWithValue("@id_detalleFactura", detalleNro);
                     comandoDetalle.Parameters.AddWithValue("@id_nro_articulo", ofactura.DetallesFactura[i].Articulo.Id_Articulo);
                     comandoDetalle.Parameters.AddWithValue("@cantidad", ofactura.DetallesFactura[i].Cantidad);
-                    comandoDetalle.Parameters.AddWithValue("@id_nro_factura", ofactura.DetallesFactura[i].Factura.Id_factura);
+                    comandoDetalle.Parameters.AddWithValue("@id_nro_factura", id_factura);
                     comandoDetalle.ExecuteNonQuery();
                 }
                 transaccion.Commit();

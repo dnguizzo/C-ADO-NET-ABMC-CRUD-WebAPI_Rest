@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos\AccesoBD.cs" />
+    <Compile Include="Dominio\FormaPago.cs" />
     <Compile Include="Dominio\Articulos.cs" />
     <Compile Include="Dominio\Factura.cs" />
     <Compile Include="Dominio\DetalleFactura.cs" />

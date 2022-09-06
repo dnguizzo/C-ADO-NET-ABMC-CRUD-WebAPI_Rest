@@ -31,7 +31,7 @@ namespace U1_Facturacion
             
         }
 
-        public double CalcularSubTotal() // determiano el subtotal por cada lista del detalle de la factura
+        public double CalcularSubTotalDF() // determiano el subtotal por cada lista del detalle de la factura
         {
             return Articulo.Precio_Unitario * Cantidad;
         }

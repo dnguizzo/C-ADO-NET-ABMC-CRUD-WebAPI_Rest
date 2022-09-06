@@ -11,7 +11,7 @@ namespace U1_Facturacion
         private int id_factura;
         private DateTime fecha; 
         private string cliente;
-        private int id_formaPago;
+        private FormaPago formaPago = new FormaPago();
         private List<DetalleFactura> detallesFactura = new List<DetalleFactura>(); // se establece la relacion Agregacion con el detallae como uina arreglo o lista por cada id.
 
         public int Id_Factura
@@ -32,10 +32,10 @@ namespace U1_Facturacion
             set { cliente = value; }
         }
 
-        public int Id_FormaPago
+        public Formapago FormaPago
         {
-            get { return id_formaPago ; }
-            set { id_formaPago = value; }
+            get { return formaPago ; }
+            set { formaPago = value; }
         }
 
         public List<DetalleFactura> DetallesFactura
