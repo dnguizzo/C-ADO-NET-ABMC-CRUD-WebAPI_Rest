@@ -110,7 +110,7 @@ namespace U1_Facturacion
         }
 
             
-        }
+    }
 
         //public bool EliminarCarrera(int id_carrera)
         //{
@@ -123,5 +123,5 @@ namespace U1_Facturacion
         //    return filas == 1;
 
         //}
-    }
 }
+

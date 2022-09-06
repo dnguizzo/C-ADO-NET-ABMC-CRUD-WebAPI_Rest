@@ -11,7 +11,7 @@ namespace U1_Facturacion
         private int id_factura;
         private DateTime fecha; 
         private string cliente;
-        private FormaPago formaPago = new FormaPago();
+        private Formapago formaPago;
         private List<DetalleFactura> detallesFactura = new List<DetalleFactura>(); // se establece la relacion Agregacion con el detallae como uina arreglo o lista por cada id.
 
         public int Id_Factura
