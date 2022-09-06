@@ -59,7 +59,7 @@ namespace U1_Facturacion
             {
                 conexion.Open();
                 transaccion = conexion.BeginTransaction();
-
+                // Insert del maestro
                 SqlCommand cmdMaestro = new SqlCommand("SP_insertar_factura", conexion, transaccion); 
                 cmdMaestro.CommandType = CommandType.StoredProcedure;
                 // Parametros de entrada
@@ -73,19 +73,19 @@ namespace U1_Facturacion
                 cmdMaestro.Parameters.Add(param);
                 cmdMaestro.ExecuteNonQuery();
                 int id_factura = Convert.ToInt32(param.Value);
-                
-                
-                
-                SqlCommand comandoDetalle = new SqlCommand("SP_insertar_detalleCarreras", conexion, transaccion);
+
+
+                // INsert del Detalle
+                SqlCommand comandoDetalle;
+                comandoDetalle = new SqlCommand("SP_insertar_DetalleFacturas", conexion, transaccion);
                 comandoDetalle.CommandType = CommandType.StoredProcedure;
             
-                for (int i = 0; i < carrera.DetallesCarrera.Count; i++)
+                for (int i = 0; i < ofactura.DetallesFactura.Count; i++) // contamos la cantidad de elementos del objeto list (detalle) de la factura objeto.
                 {
                     comandoDetalle.Parameters.Clear();
-                    comandoDetalle.Parameters.AddWithValue("@anioCursado", carrera.DetallesCarrera[i].AnioCursado);
-                    comandoDetalle.Parameters.AddWithValue("@cuatrimestre", carrera.DetallesCarrera[i].Cuatrimestre);
-                    comandoDetalle.Parameters.AddWithValue("@id_asignatura", carrera.DetallesCarrera[i].Materia.Codigo);
-                    comandoDetalle.Parameters.AddWithValue("@id_carrera", id_carrera);
+                    comandoDetalle.Parameters.AddWithValue("@id_nro_articulo", ofactura.DetallesFactura[i].Articulo.Id_Articulo);
+                    comandoDetalle.Parameters.AddWithValue("@cantidad", ofactura.DetallesFactura[i].Cantidad);
+                    comandoDetalle.Parameters.AddWithValue("@id_nro_factura", ofactura.DetallesFactura[i].Factura.Id_factura);
                     comandoDetalle.ExecuteNonQuery();
                 }
                 transaccion.Commit();
@@ -106,37 +106,19 @@ namespace U1_Facturacion
             return respuesta;
         }
 
-        public int AltaCarrera_SP(string SPName, Carrera carrera)
-        {
-            int id_carrera;
-
-            conexion.Open();
-            ConfigurarComando_SP(SPName);
-            comando.Parameters.AddWithValue("@nombre", carrera.Nombre_Titulo);
-
-            SqlParameter param = new SqlParameter("@new_id_carrera", SqlDbType.Int);
-            param.Direction = ParameterDirection.Output;
-            comando.Parameters.Add(param);
-
-            comando.ExecuteNonQuery();
-
-            id_carrera = Convert.ToInt32(param.Value);
-
-            conexion.Close();
-            return id_carrera;
             
         }
 
-        public bool EliminarCarrera(int id_carrera)
-        {
-            conexion.Open();
-            comando = new SqlCommand("sp_registrar_baja_carrera", conexion);
-            comando.Parameters.AddWithValue("@id_carrera", id_carrera);
-            int filas = comando.ExecuteNonQuery();
-            conexion.Close();
+        //public bool EliminarCarrera(int id_carrera)
+        //{
+        //    conexion.Open();
+        //    comando = new SqlCommand("sp_registrar_baja_carrera", conexion);
+        //    comando.Parameters.AddWithValue("@id_carrera", id_carrera);
+        //    int filas = comando.ExecuteNonQuery();
+        //    conexion.Close();
 
-            return filas == 1;
+        //    return filas == 1;
 
-        }
+        //}
     }
 }

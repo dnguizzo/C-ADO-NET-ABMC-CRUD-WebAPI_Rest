@@ -112,7 +112,7 @@ namespace U1_Facturacion.Formularios
 
         private void nroFactura()
         {
-            int next = accesoBD.proximaFactura();
+            int next = accesoBD.proximaFactura("SP_proximaFactura");
             if (next > 0)
                 lblFactura.Text = "Factura Nº: " + next.ToString();
             else
