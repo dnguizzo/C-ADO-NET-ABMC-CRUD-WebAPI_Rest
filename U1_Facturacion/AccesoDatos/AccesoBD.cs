@@ -34,10 +34,10 @@ namespace U1_Facturacion
             return tabla;
         }
 
-        public int proximaFactura() // Ejecuto un SP que solo me devuelve un parametro de salida.
+        public int proximaFactura(string SPNombre) // Ejecuto un SP que solo me devuelve un parametro de salida.
         {
             conexion.Open();
-
+            ConfigurarComando_SP(SPNombre);
             SqlParameter parametroS = new SqlParameter();
             parametroS.ParameterName = "@next";
             parametroS.DbType = DbType.Int32;
@@ -50,7 +50,7 @@ namespace U1_Facturacion
 
         }
 
-        public bool AltaCarrera(Carrera carrera)
+        public bool ConfirmarFactura(Factura ofactura)
         {
             bool respuesta = true;
             SqlTransaction transaccion = null;
@@ -60,14 +60,22 @@ namespace U1_Facturacion
                 conexion.Open();
                 transaccion = conexion.BeginTransaction();
 
-                SqlCommand cmdMaestro = new SqlCommand("SP_insertar_carrera", conexion, transaccion);
+                SqlCommand cmdMaestro = new SqlCommand("SP_insertar_factura", conexion, transaccion); 
                 cmdMaestro.CommandType = CommandType.StoredProcedure;
-                SqlParameter param = new SqlParameter("@new_id_carrera", SqlDbType.Int);
+                // Parametros de entrada
+                cmdMaestro.Parameters.AddWithValue("fecha", ofactura.Fecha);
+                cmdMaestro.Parameters.AddWithValue("id_Tipopago", ofactura.Id_FormaPago);
+                cmdMaestro.Parameters.AddWithValue("cliente", ofactura.Cliente);
+                
+                // Parametros de salida como el iD
+                SqlParameter param = new SqlParameter("@new_id_factura", SqlDbType.Int);
                 param.Direction = ParameterDirection.Output;
                 cmdMaestro.Parameters.Add(param);
                 cmdMaestro.ExecuteNonQuery();
-
-                int id_carrera = Convert.ToInt32(param.Value);
+                int id_factura = Convert.ToInt32(param.Value);
+                
+                
+                
                 SqlCommand comandoDetalle = new SqlCommand("SP_insertar_detalleCarreras", conexion, transaccion);
                 comandoDetalle.CommandType = CommandType.StoredProcedure;
             
