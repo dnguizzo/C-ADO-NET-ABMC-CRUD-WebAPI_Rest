@@ -1,7 +1,7 @@
 ﻿
 namespace U1_Facturacion.Formularios
 {
-    partial class Form_Nueva_Factura
+    partial class FormNuevaFactura
     {
         /// <summary>
         /// Required designer variable.
@@ -74,6 +74,7 @@ namespace U1_Facturacion.Formularios
             this.dgvDetalles.RowTemplate.Height = 24;
             this.dgvDetalles.Size = new System.Drawing.Size(556, 240);
             this.dgvDetalles.TabIndex = 0;
+            this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick);
             // 
             // Id_Col_Articulo
             // 

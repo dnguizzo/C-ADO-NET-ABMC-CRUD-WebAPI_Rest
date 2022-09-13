@@ -66,11 +66,11 @@
     <Compile Include="Dominio\Articulos.cs" />
     <Compile Include="Dominio\Factura.cs" />
     <Compile Include="Dominio\DetalleFactura.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Formularios\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Formularios\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormNuevaFactura.cs">
       <SubType>Form</SubType>
@@ -80,6 +80,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormNuevaFactura.resx">
       <DependentUpon>FormNuevaFactura.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace U1_Facturacion.Formularios
 {
-    public partial class Form_Nueva_Factura : Form
+    public partial class FormNuevaFactura : Form
     {
 
         Factura factura;
         AccesoBD accesoBD;
-        public Form_Nueva_Factura()
+        public FormNuevaFactura()
         {
             InitializeComponent();
              accesoBD = new AccesoBD();
@@ -24,7 +24,7 @@ namespace U1_Facturacion.Formularios
 
         private void CargarFormaPago()
         {
-            DataTable table = accesoBD.Consultar_SP("SP_consultar_formaPagos");
+            DataTable table = accesoBD.Consultar_SP("SP_consultar_formaPago");
             if (table != null)
             {
                 cboFormaPago.DataSource = table;
@@ -119,5 +119,17 @@ namespace U1_Facturacion.Formularios
                 MessageBox.Show("Error de datos. No se puede obtener Nº de Factura!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void dgvDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDetalles.CurrentCell.ColumnIndex == 4) // Permite eliminar un item del detalle seleccionado
+            {
+                factura.EliminarDetalle(dgvDetalles.CurrentRow.Index);
+                //click button:
+                dgvDetalles.Rows.Remove(dgvDetalles.CurrentRow);
+                //factura.quitarDetalle();
+                CalcularTotal();
+
+            }
+        }
     }
 }

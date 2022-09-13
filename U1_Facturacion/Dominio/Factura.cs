@@ -16,7 +16,8 @@ namespace U1_Facturacion
 
         public int Id_Factura
         {
-            get { return id_factura; } // no puedo alterar el número, solo puedo buscarlo.
+            get { return id_factura; }
+            set { id_factura = value; }// no puedo alterar el número, solo puedo buscarlo.
         }
 
         public DateTime Fecha
