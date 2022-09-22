@@ -30,14 +30,14 @@ namespace U1_Facturacion.Formularios
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,31 +55,6 @@ namespace U1_Facturacion.Formularios
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // archivoToolStripMenuItem
-            // 
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.archivoToolStripMenuItem.Text = "Ayuda";
-            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reportesDeFacturasToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(82, 24);
-            this.toolStripMenuItem1.Text = "Reportes";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultaFacturasToolStripMenuItem,
-            this.nuevaFacturaToolStripMenuItem});
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(70, 24);
-            this.toolStripMenuItem2.Text = "Factura";
-            // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -91,29 +66,54 @@ namespace U1_Facturacion.Formularios
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultaFacturasToolStripMenuItem,
+            this.nuevaFacturaToolStripMenuItem});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(70, 24);
+            this.toolStripMenuItem2.Text = "Factura";
             // 
             // consultaFacturasToolStripMenuItem
             // 
             this.consultaFacturasToolStripMenuItem.Name = "consultaFacturasToolStripMenuItem";
-            this.consultaFacturasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consultaFacturasToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
             this.consultaFacturasToolStripMenuItem.Text = "Consulta Facturas";
             this.consultaFacturasToolStripMenuItem.Click += new System.EventHandler(this.consultaFacturasToolStripMenuItem_Click);
             // 
             // nuevaFacturaToolStripMenuItem
             // 
             this.nuevaFacturaToolStripMenuItem.Name = "nuevaFacturaToolStripMenuItem";
-            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
             this.nuevaFacturaToolStripMenuItem.Text = "Nueva Factura";
             this.nuevaFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevaFacturaToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reportesDeFacturasToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(82, 24);
+            this.toolStripMenuItem1.Text = "Reportes";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // reportesDeFacturasToolStripMenuItem
             // 
             this.reportesDeFacturasToolStripMenuItem.Name = "reportesDeFacturasToolStripMenuItem";
             this.reportesDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.reportesDeFacturasToolStripMenuItem.Text = "Reportes de Facturas";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.archivoToolStripMenuItem.Text = "Ayuda";
+            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -125,6 +125,7 @@ namespace U1_Facturacion.Formularios
             this.Name = "Principal";
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

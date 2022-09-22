@@ -62,10 +62,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos\AccesoBD.cs" />
+    <Compile Include="AccesoDatos\Parametro.cs" />
     <Compile Include="Dominio\FormaPago.cs" />
     <Compile Include="Dominio\Articulos.cs" />
     <Compile Include="Dominio\Factura.cs" />
     <Compile Include="Dominio\DetalleFactura.cs" />
+    <Compile Include="Formularios\FormConsultaFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormConsultaFactura.Designer.cs">
+      <DependentUpon>FormConsultaFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormDetallesFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormDetallesFactura.Designer.cs">
+      <DependentUpon>FormDetallesFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +93,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FormConsultaFactura.resx">
+      <DependentUpon>FormConsultaFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormDetallesFactura.resx">
+      <DependentUpon>FormDetallesFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>

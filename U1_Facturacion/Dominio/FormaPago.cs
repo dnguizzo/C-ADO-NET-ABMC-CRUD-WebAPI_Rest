@@ -24,7 +24,13 @@ namespace U1_Facturacion
             set { nombre = value; }
         }
 
-      
+        public Formapago()
+        {
+            this.id_tipoPago = 1;
+            this.nombre = "contado";
+
+        }
+
 
         public Formapago (int nro, string nom)
         {

@@ -52,6 +52,7 @@ namespace U1_Facturacion.Formularios
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnAgregarDetalle = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.SuspendLayout();
@@ -125,6 +126,7 @@ namespace U1_Facturacion.Formularios
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -134,6 +136,7 @@ namespace U1_Facturacion.Formularios
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // cboArticulo
             // 
@@ -261,11 +264,22 @@ namespace U1_Facturacion.Formularios
             this.btnAgregarDetalle.UseVisualStyleBackColor = true;
             this.btnAgregarDetalle.Click += new System.EventHandler(this.btnAgregarDetalle_Click);
             // 
-            // Form_Nueva_Factura
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(687, 368);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 20;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // FormNuevaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnAgregarDetalle);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.dtpFecha);
@@ -284,7 +298,7 @@ namespace U1_Facturacion.Formularios
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvDetalles);
-            this.Name = "Form_Nueva_Factura";
+            this.Name = "FormNuevaFactura";
             this.Text = "FACTURA";
             this.Load += new System.EventHandler(this.Form_Nueva_Factura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
@@ -319,5 +333,6 @@ namespace U1_Facturacion.Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAccion;
         private System.Windows.Forms.Button btnAgregarDetalle;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

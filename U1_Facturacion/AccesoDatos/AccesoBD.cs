@@ -9,100 +9,188 @@ using System.Threading.Tasks;
 namespace U1_Facturacion
 
 {
-    internal class AccesoBD
+     class AccesoBD
     {
-        private SqlConnection conexion = new SqlConnection(Properties.Resources.cadenaConexion);
-        private SqlCommand comando = new SqlCommand();
+        private SqlConnection cnn;
+        
+        public AccesoBD() // constructor
+        {
+            cnn = new SqlConnection(Properties.Resources.cadenaConexion);
+            
+        }
+         
 
         private void ConfigurarComando_SP(string SPNombre)
         {
-            comando.Connection = conexion;
-            comando.CommandText = SPNombre;
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
         }
 
-        public DataTable Consultar_SP(string SPNombre) // Tiene como parámetros el nombre del SP
+        public DataTable Consultar_SP(string SPNombre) // Tiene como parámetros el nombre del SP solo para consulta sin parametros
         {
+
+            SqlCommand cmd = new SqlCommand();
             DataTable tabla = new DataTable();
 
-            conexion.Open();
-            ConfigurarComando_SP(SPNombre);
-            tabla.Load(comando.ExecuteReader());
-
-            conexion.Close();
+            cnn.Open();
+            // ejecuta el metodo de comandos:
+            cmd.Connection = cnn;
+            cmd.CommandText = SPNombre;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            tabla.Load(cmd.ExecuteReader());
+            cnn.Close();
 
             return tabla;
         }
 
+        public DataTable Consultar_SQL(string SPNombre, List<Parametro> values) // Consulta con parametros de entrada
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataTable tabla = new DataTable();
+
+            cnn.Open();
+            // ejecuta el metodo de comandos:
+            cmd.Connection = cnn;
+            cmd.CommandText = SPNombre;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // modelo para agregar los atributos del listado de parametros a mi comando :
+            foreach (Parametro oParametro in values)
+            {
+                cmd.Parameters.AddWithValue(oParametro.Clave, oParametro.Valor); 
+            }
+            tabla.Load(cmd.ExecuteReader());
+
+            cnn.Close();
+
+            return tabla;
+        }
+
+        public int Ejecutar_SQL(string SPNombre, List<Parametro> values) // Script que no devuelve filas, para insertar, modificar o eliminiar con parametros de entrada, de salida y transaccion.
+        {
+            int filasAfectadas = 0;
+            SqlTransaction trans = null; // creo una variable que representa las transacciones y la inicializo.
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cnn.Open();
+
+                trans = cnn.BeginTransaction(); // inicio de las transacciones.
+                // ejecuta el metodo de comandos:
+                cmd.Connection = cnn;
+                cmd.CommandText = SPNombre;
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Transaction = trans; // agrego el parametro transaccion a la clase SQLcomand y que no está en el metodo configurarcomando.
+
+                if (values != null) // si tiene parametros de entrada
+                {
+                    foreach (Parametro oParametro in values)
+                    {
+                        cmd.Parameters.AddWithValue(oParametro.Clave, oParametro.Valor); // modelo para agregar los atributos del listado de parametros a mi comando 
+                    }
+                }
+                
+                filasAfectadas = cmd.ExecuteNonQuery();
+                trans.Commit();
+            }
+            catch (SqlException) // en caso de error muestra el mismo
+            {
+                if (trans != null)
+                {
+                    trans.Rollback();
+                }
+                          
+            }
+            finally
+            {
+                if (cnn!= null && cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+            
+            return filasAfectadas;
+        }
+
+
+
         public int proximaFactura(string SPNombre) // Ejecuto un SP que solo me devuelve un parametro de salida.
         {
-            conexion.Open();
-            ConfigurarComando_SP(SPNombre);
-            SqlParameter parametroS = new SqlParameter();
-            parametroS.ParameterName = "@next";
-            parametroS.DbType = DbType.Int32;
-            parametroS.Direction = ParameterDirection.Output;
-            comando.Parameters.Add(parametroS);
-            comando.ExecuteNonQuery();
+            SqlCommand cmd = new SqlCommand();
+            cnn.Open();
+            // ejecuta el metodo de comandos:
+            cmd.Connection = cnn;
+            cmd.CommandText = SPNombre;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            // creo un objeto de la clase Parameter:
+            SqlParameter parametros = new SqlParameter(); 
+            parametros.ParameterName = "@next";
+            parametros.DbType = DbType.Int32;
+            parametros.Direction = ParameterDirection.Output; // lo identifico como de salida
+            cmd.Parameters.Add(parametros);
+            cmd.ExecuteNonQuery();
 
-            conexion.Close();
-            return Convert.ToInt32(parametroS.Value);
+            cnn.Close();
+            return (int) parametros.Value; // asigno el valor del parametro a la salida del metodo.
 
         }
 
         public bool ConfirmarFactura(Factura ofactura)
         {
             bool respuesta = true;
-            SqlTransaction transaccion = null;
+            SqlTransaction trans = null;
 
             try
             {
-                conexion.Open();
-                transaccion = conexion.BeginTransaction();
+                cnn.Open();
+                trans = cnn.BeginTransaction();
                 // Insert del maestro
-                SqlCommand cmdMaestro = new SqlCommand("SP_insertar_factura", conexion, transaccion); 
+                SqlCommand cmdMaestro = new SqlCommand("SP_insertar_factura", cnn, trans); 
                 cmdMaestro.CommandType = CommandType.StoredProcedure;
                 // Parametros de entrada
                 cmdMaestro.Parameters.AddWithValue("fecha", ofactura.Fecha);
-                cmdMaestro.Parameters.AddWithValue("id_Tipopago", ofactura.FormaPago.Id_TipoPago);
                 cmdMaestro.Parameters.AddWithValue("cliente", ofactura.Cliente);
-                
+                cmdMaestro.Parameters.AddWithValue("id_Tipopago", ofactura.FormaPago.Id_TipoPago); // referencio a la property
                 // Parametros de salida como el iD
-                SqlParameter param = new SqlParameter("@new_id_factura", SqlDbType.Int);
-                param.Direction = ParameterDirection.Output;
-                cmdMaestro.Parameters.Add(param);
+                SqlParameter pOut = new SqlParameter("@new_id_factura", SqlDbType.Int);
+                pOut.Direction = ParameterDirection.Output;
+                cmdMaestro.Parameters.Add(pOut);
                 cmdMaestro.ExecuteNonQuery();
-                int id_factura = Convert.ToInt32(param.Value);
+                int id_factura = Convert.ToInt32(pOut.Value);
 
 
-                // INsert del Detalle
+                // Insert del Detalle
                 int detalleNro = 1; // Inicializo una variable que me cuenta el id del detalle.
-                SqlCommand comandoDetalle;
-                
-            
-                for (int i = 0; i < ofactura.DetallesFactura.Count; i++) // contamos la cantidad de elementos del objeto list (detalle) de la factura objeto.
+                SqlCommand cmdDetalle;
+                            
+                foreach (DetalleFactura item in ofactura.DetallesFactura) // contamos la cantidad de elementos del objeto list (detalle) de la factura objeto.
                 {
-                    comandoDetalle = new SqlCommand("SP_insertar_DetalleFacturas", conexion, transaccion);
-                    comandoDetalle.CommandType = CommandType.StoredProcedure;
-                    comandoDetalle.Parameters.Clear();
-                    comandoDetalle.Parameters.AddWithValue("@id_detalleFactura", detalleNro);
-                    comandoDetalle.Parameters.AddWithValue("@id_nro_articulo", ofactura.DetallesFactura[i].Articulo.Id_Articulo);
-                    comandoDetalle.Parameters.AddWithValue("@cantidad", ofactura.DetallesFactura[i].Cantidad);
-                    comandoDetalle.Parameters.AddWithValue("@id_nro_factura", id_factura);
-                    comandoDetalle.ExecuteNonQuery();
+                    cmdDetalle = new SqlCommand("SP_insertar_detalleFacturas", cnn, trans);
+                    cmdDetalle.CommandType = CommandType.StoredProcedure;
+                    cmdDetalle.Parameters.Clear();
+                    cmdDetalle.Parameters.AddWithValue("@id_detalleFactura", detalleNro);
+                    cmdDetalle.Parameters.AddWithValue("@id_nro_articulo", item.Articulo.Id_Articulo);
+                    cmdDetalle.Parameters.AddWithValue("@cantidad", item.Cantidad);
+                    cmdDetalle.Parameters.AddWithValue("@id_nro_factura", id_factura);
+                    cmdDetalle.ExecuteNonQuery();
+
+                    detalleNro++;
                 }
-                transaccion.Commit();
+                trans.Commit();
             }
             catch (Exception)
             {
-                transaccion.Rollback();
+                
+                if ( trans != null)
+                                   
+                trans.Rollback();
                 respuesta = false;
             }
             finally
             {
-                if(conexion != null && conexion.State == ConnectionState.Open)
+                if(cnn != null && cnn.State == ConnectionState.Open)
                 {
-                    conexion.Close();
+                    cnn.Close();
                 }
             }
 

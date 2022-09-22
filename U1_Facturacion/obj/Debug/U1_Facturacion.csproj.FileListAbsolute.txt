@@ -9,3 +9,4 @@ C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II
 C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 1\Facturación\U1_Facturacion\obj\Debug\U1_Facturacion.pdb
 C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 1\Facturación\U1_Facturacion\obj\Debug\U1_Facturacion.Formularios.Principal.resources
 C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 1\Facturación\U1_Facturacion\obj\Debug\U1_Facturacion.Formularios.FormNuevaFactura.resources
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 1\Facturación\U1_Facturacion\obj\Debug\U1_Facturacion.Formularios.FormConsultaFactura.resources

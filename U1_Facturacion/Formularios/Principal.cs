@@ -25,18 +25,19 @@ namespace U1_Facturacion.Formularios
 
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Facturación", "Unidad 2", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void consultaFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormConsultaFactura consultaFactura = new FormConsultaFactura();
+            consultaFactura.ShowDialog();// muestra el formulario de para consultar facturas
         }
 
         private void nuevaFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormNuevaFactura nuevaFactura = new FormNuevaFactura();
-                nuevaFactura.ShowDialog();
+                nuevaFactura.ShowDialog();// muestra el formulario de nueva factura
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +46,11 @@ namespace U1_Facturacion.Formularios
             {
                 this.Close();
             }
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
