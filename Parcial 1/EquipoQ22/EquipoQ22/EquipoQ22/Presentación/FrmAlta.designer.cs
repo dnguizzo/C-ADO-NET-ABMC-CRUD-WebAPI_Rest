@@ -56,7 +56,7 @@ namespace EquipoQ22
             // txtDT
             // 
             this.txtDT.Location = new System.Drawing.Point(163, 62);
-            this.txtDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtDT.Name = "txtDT";
             this.txtDT.Size = new System.Drawing.Size(528, 22);
             this.txtDT.TabIndex = 4;
@@ -75,7 +75,7 @@ namespace EquipoQ22
             // 
             this.cboPersona.FormattingEnabled = true;
             this.cboPersona.Location = new System.Drawing.Point(16, 129);
-            this.cboPersona.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboPersona.Margin = new System.Windows.Forms.Padding(4);
             this.cboPersona.Name = "cboPersona";
             this.cboPersona.Size = new System.Drawing.Size(229, 24);
             this.cboPersona.TabIndex = 6;
@@ -83,7 +83,7 @@ namespace EquipoQ22
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(553, 126);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(139, 28);
             this.btnAgregar.TabIndex = 11;
@@ -103,12 +103,13 @@ namespace EquipoQ22
             this.posicion,
             this.acciones});
             this.dgvDetalles.Location = new System.Drawing.Point(16, 162);
-            this.dgvDetalles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDetalles.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetalles.Name = "dgvDetalles";
             this.dgvDetalles.ReadOnly = true;
             this.dgvDetalles.RowHeadersWidth = 51;
             this.dgvDetalles.Size = new System.Drawing.Size(676, 172);
             this.dgvDetalles.TabIndex = 12;
+            this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick);
             // 
             // idPersona
             // 
@@ -156,7 +157,7 @@ namespace EquipoQ22
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(259, 363);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 13;
@@ -167,7 +168,7 @@ namespace EquipoQ22
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(364, 363);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 14;
@@ -196,7 +197,7 @@ namespace EquipoQ22
             // txtPais
             // 
             this.txtPais.Location = new System.Drawing.Point(163, 30);
-            this.txtPais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPais.Margin = new System.Windows.Forms.Padding(4);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(528, 22);
             this.txtPais.TabIndex = 2;
@@ -220,7 +221,7 @@ namespace EquipoQ22
             "Mediocampista",
             "Delantero"});
             this.cboPosicion.Location = new System.Drawing.Point(352, 127);
-            this.cboPosicion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboPosicion.Margin = new System.Windows.Forms.Padding(4);
             this.cboPosicion.Name = "cboPosicion";
             this.cboPosicion.Size = new System.Drawing.Size(192, 24);
             this.cboPosicion.TabIndex = 10;
@@ -285,12 +286,12 @@ namespace EquipoQ22
             this.Controls.Add(this.cboPersona);
             this.Controls.Add(this.txtDT);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(730, 443);
             this.MinimumSize = new System.Drawing.Size(730, 443);
             this.Name = "FrmAlta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "5";
+            this.Text = "Nuevo Equipo";
             this.Load += new System.EventHandler(this.FrmAlta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCamiseta)).EndInit();

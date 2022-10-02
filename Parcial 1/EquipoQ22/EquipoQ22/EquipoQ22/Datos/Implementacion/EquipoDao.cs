@@ -1,6 +1,7 @@
-﻿using EquipoQ22.datos;
+﻿using EquipoQ22.Datos.Interfaz;
+using EquipoQ22.datos;
 using EquipoQ22.Datos;
-using EquipoQ22.Domino;
+using EquipoQ22.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,9 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EquipoQ22.Datos.Implementacion
+
+namespace EquipoQ22.Datos
 {
-    public class EquiopiDao : IEquipoDao // Herencia mediante interfaz - implementa los metodos de la inerfaz Idao
+    public class EquipoDao : IEquipoDao // Herencia mediante interfaz - implementa los metodos de la inerfaz Idao
     {
        
         public List<Persona> ObtenerPersonas()
@@ -39,7 +41,7 @@ namespace EquipoQ22.Datos.Implementacion
 
         public bool Crear(Equipo oEquipo)
         {
-            bool ok = true;
+            bool ok = false;
             SqlConnection cnn = HelperDB.ObtenerInstancia().ObtenerConexion(); // creo conexion porque no es un atributo de la claae y si en el helper
             SqlTransaction t = null; // inicializo la variable
             SqlCommand cmd = new SqlCommand(); // Creo una clase de comandos sin parametros y luego los inicializo.
@@ -52,8 +54,8 @@ namespace EquipoQ22.Datos.Implementacion
                 cmd.Transaction = t;
                 cmd.CommandText = "SP_INSERTAR_EQUIPO";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@pais", oEquipo.Pais); // Parametros de entrada sigo el orden que tienen en el sp
-                cmd.Parameters.AddWithValue("@director_tecnico", oEquipo.Tecnico);
+                cmd.Parameters.AddWithValue("@pais",oEquipo.Pais); // Parametros de entrada sigo el orden que tienen en el sp
+                cmd.Parameters.AddWithValue("@director_tecnico",oEquipo.Tecnico);
                 
 
                 //parámetro de salida:
@@ -68,10 +70,11 @@ namespace EquipoQ22.Datos.Implementacion
 
                 SqlCommand cmdDetalle; // creo un nuevo comando para insetar en la tabla de detalles
                 
-                foreach (Jugador item in oEquipo.Detalles)
+                foreach (Jugador item in oEquipo.DetallesEquipo)
                 {
                     cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLES_EQUIPOS", cnn, t); // creo un comand con parametros ya que ya los tengo creados en la transaccion anterior.
                     cmdDetalle.CommandType = CommandType.StoredProcedure;
+                    cmdDetalle.Parameters.Clear();
                     cmdDetalle.Parameters.AddWithValue("@id_equipo", equipoNro); // parametros de entrada sigo el orden del sp.
                     cmdDetalle.Parameters.AddWithValue("@id_persona", item.Persona.IdPersona);
                     cmdDetalle.Parameters.AddWithValue("@camiseta", item.Camiseta); // lo saco del detalle que tiene un producto lista y este una properti coin el valor.
@@ -81,13 +84,14 @@ namespace EquipoQ22.Datos.Implementacion
                 
                 }
                 t.Commit();
+                ok = true;
             }
 
             catch (Exception)
             {
                 if (t != null)
                     t.Rollback();
-                ok = false;
+                
             }
 
             finally
@@ -99,10 +103,7 @@ namespace EquipoQ22.Datos.Implementacion
             return ok;
         }
 
-        public bool CrearEquipo(Equipo oEquipo)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
 

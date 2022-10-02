@@ -27,3 +27,6 @@ C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II
 C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\Parcial 1\EquipoQ22\EquipoQ22\EquipoQ22\obj\Debug\EquipoQ22.csproj.CoreCompileInputs.cache
 C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\Parcial 1\EquipoQ22\EquipoQ22\EquipoQ22\obj\Debug\EquipoQ22.exe
 C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\Parcial 1\EquipoQ22\EquipoQ22\EquipoQ22\obj\Debug\EquipoQ22.pdb
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\Parcial 1\EquipoQ22\EquipoQ22\EquipoQ22\bin\Debug\EquipoQ22.exe.config
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\Parcial 1\EquipoQ22\EquipoQ22\EquipoQ22\bin\Debug\EquipoQ22.exe
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\Parcial 1\EquipoQ22\EquipoQ22\EquipoQ22\bin\Debug\EquipoQ22.pdb

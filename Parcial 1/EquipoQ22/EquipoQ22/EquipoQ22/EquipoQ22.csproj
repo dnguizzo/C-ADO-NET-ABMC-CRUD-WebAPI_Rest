@@ -47,12 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\HelperDB.cs" />
-    <Compile Include="Datos\IEquipoDao.cs" />
+    <Compile Include="Datos\Interfaz\IEquipoDao.cs" />
     <Compile Include="Datos\Implementacion\EquipoDao.cs" />
     <Compile Include="Datos\Parametro.cs" />
-    <Compile Include="Domino\Equipo.cs" />
-    <Compile Include="Domino\Jugador.cs" />
-    <Compile Include="Domino\Persona.cs" />
+    <Compile Include="Dominio\Equipo.cs" />
+    <Compile Include="Dominio\Jugador.cs" />
+    <Compile Include="Dominio\Persona.cs" />
     <Compile Include="Presentación\FrmAlta.cs">
       <SubType>Form</SubType>
     </Compile>

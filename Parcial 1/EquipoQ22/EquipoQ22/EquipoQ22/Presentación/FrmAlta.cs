@@ -1,4 +1,4 @@
-﻿using EquipoQ22.Domino;
+﻿using EquipoQ22.Dominio;
 using EquipoQ22.Servicios;
 using EquipoQ22.Servicios.Interfaz;
 using System;
@@ -22,40 +22,46 @@ namespace EquipoQ22
     public partial class FrmAlta : Form
     {
         private IServicio servicio;
+        private FabricaServicio fabrica;
 
         private Equipo nuevo;
-        public FrmAlta(FabricaServicio fabrica)
+        public FrmAlta()
         {
             InitializeComponent();
+            fabrica = new FabricaServicioImp();
             servicio = fabrica.CrearServicio();
 
             CargarPersonas();
             //Crear nuevo equipo:
             nuevo = new Equipo();
         }
+
+       
         private void FrmAlta_Load(object sender, EventArgs e)
         {
             txtPais.Text = "";
             txtDT.Text = "";
             this.ActiveControl = cboPersona; // Set foco al combo
         }
-        
+
+        private bool existe(string selectedItem1)
+        {
+            bool aux = false;
+            foreach (DataGridViewRow item in dgvDetalles.Rows)
+            {
+                if (item.Cells["IdPersona"].Value.ToString().Equals(selectedItem1))
+                {
+                    aux = true;
+                    break;
+                }
+
+            }
+            return aux;
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtPais.Text))
-            {
-                MessageBox.Show("Debe ingresar un pais válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtPais.Focus();
-                return;
-            }
-
-            if (string.IsNullOrEmpty(txtDT.Text))
-            {
-                MessageBox.Show("Debe ingresar un nombre válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtDT.Focus();
-                return;
-            }
+          
 
             if (cboPersona.Text.Equals(String.Empty)) // valido en el combo
             {
@@ -63,35 +69,41 @@ namespace EquipoQ22
                 return;
             }
 
-           
+            if (nudCamiseta.Value < 1 || nudCamiseta.Value > 23)
+            {
+                MessageBox.Show("Debe ingresar una cantidad válida!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
-            //foreach (DataGridViewRow row in dgvDetalles.Rows) // valido en el dgv que no haya el mismo producto cargado 
-            //{
-            //    if (row.Cells["colProd"].Value.ToString().Equals(cboProductos.Text))
-            //    {
-            //        MessageBox.Show("PRODUCTO: " + cboProductos.Text + " ya se encuentra como detalle!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //        return;
 
-            //    }
-            //}
 
 
 
             Persona p = (Persona)cboPersona.SelectedItem;
-            Jugador j = (Jugador)cboPosicion.SelectedItem;
+            int camiseta = Convert.ToInt32(nudCamiseta.Value);
+            string posicion = (cboPosicion.SelectedText).ToString();
 
-       
-
-            DetalleEquipo detalle = new DetalleEquipo(j);
+            if (!existe(cboPersona.Text)) // preguntamos si no exsite , si no es verdadero.
+            {
+                Jugador detalle = new Jugador(p,camiseta,posicion);
             nuevo.AgregarDetalle(detalle);
-            dgvDetalles.Rows.Add(new object[] { j.p.IdPersona, j.p.NombreCompleto, j.Camiseta, j.Posicion });
-
+            dgvDetalles.Rows.Add(new object[] { p.IdPersona, p.NombreCompleto, nudCamiseta.Value, cboPosicion.SelectedItem });
+            }
+            else
+            {
+                MessageBox.Show("Posicion ya asiganda a esa persona", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             CalcularTotal();
+            if (nuevo.CalcularTotalEquipo() < 1)
+            {
+                MessageBox.Show("Debe ingresar un jugador al equipo!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void CalcularTotal()
         {
-            double total = nuevo.CalcularTotal();
+            double total = nuevo.CalcularTotalEquipo();
             lblTotal.Text = "Total de Jugadores: " + total.ToString();
 
             
@@ -105,19 +117,11 @@ namespace EquipoQ22
 
         }
 
-        //private void CargarPosicion()
-        //{
-        //    cboPersona.DataSource = servicio.ObtenerPosiciones(); // carga una list de personas
-        //    cboPersona.DisplayMember = "NombreCompleto"; // Properties del objetos producto.
-        //    cboPersona.ValueMember = "IdPersona";
-
-        //}
+       
 
         private void GuardarEquipo()
         {
-            //datos del equipo:
-            nuevo.Pais = txtPais.Text;
-            nuevo.Tecnico = txtDT.Text;
+           
 
 
             if (servicio.CrearEquipo(nuevo)) // por defecto lo toma como  verdadero.
@@ -146,13 +150,22 @@ namespace EquipoQ22
                 MessageBox.Show("Debe ingresar un nombre!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            //datos del equipo:
+            nuevo.Pais = txtPais.Text;
+            nuevo.Tecnico = txtDT.Text;
 
             GuardarEquipo();
+            LimpiarCampos();
         }
 
         private void LimpiarCampos()
         {
-
+            txtPais.Text = String.Empty;
+            txtDT.Text = String.Empty;
+            cboPersona.SelectedIndex = -1;
+            cboPosicion.SelectedIndex = -1;
+            nudCamiseta.Value = 1;
+            dgvDetalles.Rows.Clear();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -164,7 +177,17 @@ namespace EquipoQ22
             }
         }
 
+        private void dgvDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDetalles.CurrentCell.ColumnIndex == 4) // Permite eliminar un item del detalle seleccionado
+            {
+                nuevo.QuitarDetalle(dgvDetalles.CurrentRow.Index);
+                //click button:
+                dgvDetalles.Rows.Remove(dgvDetalles.CurrentRow);
 
+                CalcularTotal(); // calcula de nuevo el total de la factura.
 
+            }
+        }
     }
 }
