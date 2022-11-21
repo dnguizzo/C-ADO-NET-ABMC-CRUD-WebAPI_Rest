@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "YPjZvhhs9umWFP2Bpew8tYd5WI47fDPkRy8HCvcDv2Y=",
+  "Source": "TemperaturaWebAPI",
+  "BasePath": "_content/TemperaturaWebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
