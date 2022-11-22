@@ -16,18 +16,5 @@ namespace RecetasSLN.presentación
         {
             InitializeComponent();
         }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            new Frm_Alta_Receta().ShowDialog();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Seguro que desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
     }
 }

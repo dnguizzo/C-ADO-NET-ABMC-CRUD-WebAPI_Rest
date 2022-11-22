@@ -17,7 +17,7 @@ namespace RecetasSLN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmConsultarRecetas());
+            Application.Run(new FrmAltaReceta());
         }
     }
 }
