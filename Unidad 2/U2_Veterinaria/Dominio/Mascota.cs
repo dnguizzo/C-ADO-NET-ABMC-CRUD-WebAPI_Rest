@@ -14,15 +14,31 @@ namespace U2_Veterinaria.Dominio
         public Tipo Tipo {get; set;}
         public List<Atención> DetalleAtenciones { get; set; }
 
-        public Mascota (int id_mascota,string nombre, int edad, Tipo tipo, List<Atención> detalleAtenciones)
+        public Cliente Cliente { get; set; }
+
+        public Mascota (int id_mascota,string nombre, int edad, Tipo tipo, List<Atención> detalleAtenciones, Cliente cliente)
         {
             Id_Mascota = id_mascota;
             Nombre = nombre;
             Edad = edad;
             Tipo = tipo;
             DetalleAtenciones = detalleAtenciones;
+            Cliente = cliente;
         }
 
+        public Mascota()
+        {
+        DetalleAtenciones = new List<Atención> ();
+        }
+
+        public void AgregarDetalle(Atención DetalleAtencion)
+        {
+            DetalleAtenciones.Add (DetalleAtencion);
+        }
+        public void QuitarDetalle(int posicion)
+        {
+            DetalleAtenciones.RemoveAt (posicion);
+        }
         public override string ToString()
         {
             return Tipo+"|"+Nombre+"|"+Edad;
@@ -35,6 +51,14 @@ namespace U2_Veterinaria.Dominio
             foreach (Atención item in DetalleAtenciones)
                 importetotal += item.Importe;
             return importetotal;
+        }
+
+        public int CantidadAtenciones()
+        {
+          int cantidad = 0;
+          cantidad = DetalleAtenciones.Count();
+
+            return cantidad;
         }
 
 

@@ -1,0 +1,11 @@
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\obj\Debug\U2_Veterinaria.csproj.AssemblyReference.cache
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\obj\Debug\U2_Veterinaria.csproj.SuggestedBindingRedirects.cache
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\bin\Debug\U2_Veterinaria.exe.config
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\bin\Debug\U2_Veterinaria.exe
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\bin\Debug\U2_Veterinaria.pdb
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\obj\Debug\U2_Veterinaria.FormAltaMascota.resources
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\obj\Debug\U2_Veterinaria.Properties.Resources.resources
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\obj\Debug\U2_Veterinaria.csproj.GenerateResource.cache
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\obj\Debug\U2_Veterinaria.csproj.CoreCompileInputs.cache
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\obj\Debug\U2_Veterinaria.exe
+C:\Diego\Tecnicatura en Programacion\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Unidad 2\U2_Veterinaria\obj\Debug\U2_Veterinaria.pdb

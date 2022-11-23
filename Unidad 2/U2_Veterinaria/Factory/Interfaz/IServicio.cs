@@ -11,5 +11,7 @@ namespace U2_Veterinaria.Factory.Interfaz
     {
         List<Tipo> ObtenerTipos();
         bool Crear(Mascota oMascota);
+        List<Cliente> ObtenerClientes();
+       
     }
 }

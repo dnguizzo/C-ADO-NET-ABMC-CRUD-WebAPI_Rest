@@ -14,8 +14,11 @@ namespace U2_Veterinaria.Dominio
         public Tipo (int id_tipo,string nombre)
         {
            this.Id_tipo = id_tipo;
-            this.Nombre = nombre;
+           this.Nombre = nombre;
         }
 
+        public Tipo()
+        {
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace U2_Veterinaria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormAltaMascota());
         }
     }
 }

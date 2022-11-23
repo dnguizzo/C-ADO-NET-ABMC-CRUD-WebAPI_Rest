@@ -19,10 +19,18 @@ namespace U2_Veterinaria.Factory.Implementación
             dao = new MascotaDAO();
 
         }
+
+        public List<Cliente> ObtenerClientes()
+        {
+            return dao.ObtenerClientes();
+        }
+
         public bool Crear(Mascota oMascota)
         {
            return dao.Crear(oMascota);
         }
+
+       
 
         public List<Tipo> ObtenerTipos()
         {
