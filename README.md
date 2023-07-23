@@ -1,2 +1,1 @@
-ProgramacionII
-Visual Studio 2022 
+Programacion II
