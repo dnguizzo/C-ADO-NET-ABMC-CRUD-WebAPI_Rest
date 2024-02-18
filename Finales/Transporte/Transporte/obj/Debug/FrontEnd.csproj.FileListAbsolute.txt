@@ -1,0 +1,13 @@
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\obj\Debug\FrontEnd.csproj.AssemblyReference.cache
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\obj\Debug\Transporte.FormCargaCamion.resources
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\obj\Debug\Transporte.Properties.Resources.resources
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\obj\Debug\FrontEnd.csproj.GenerateResource.cache
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\obj\Debug\FrontEnd.csproj.CoreCompileInputs.cache
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\bin\Debug\Transporte.exe.config
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\bin\Debug\Transporte.exe
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\bin\Debug\Transporte.pdb
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\bin\Debug\BackEnd.dll
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\bin\Debug\BackEnd.pdb
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\obj\Debug\FrontEnd.csproj.CopyComplete
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\obj\Debug\Transporte.exe
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Transporte\obj\Debug\Transporte.pdb

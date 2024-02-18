@@ -1,0 +1,8 @@
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Backend2\obj\Debug\BackEnd.csproj.AssemblyReference.cache
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Backend2\obj\Debug\BackEnd.Properties.Resources.resources
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Backend2\obj\Debug\BackEnd.csproj.GenerateResource.cache
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Backend2\obj\Debug\BackEnd.csproj.CoreCompileInputs.cache
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Backend2\bin\Debug\BackEnd.dll
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Backend2\bin\Debug\BackEnd.pdb
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Backend2\obj\Debug\BackEnd.dll
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Transporte\Backend2\obj\Debug\BackEnd.pdb
