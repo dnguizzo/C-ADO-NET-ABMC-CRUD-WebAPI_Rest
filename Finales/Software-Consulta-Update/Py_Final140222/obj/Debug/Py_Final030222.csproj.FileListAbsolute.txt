@@ -1,0 +1,26 @@
+C:\Users\MARTIN\source\repos\Py_Final030222\bin\Debug\Py_Final030222.exe.config
+C:\Users\MARTIN\source\repos\Py_Final030222\bin\Debug\Py_Final030222.exe
+C:\Users\MARTIN\source\repos\Py_Final030222\bin\Debug\Py_Final030222.pdb
+C:\Users\MARTIN\source\repos\Py_Final030222\obj\Debug\Py_Final030222.Properties.Resources.resources
+C:\Users\MARTIN\source\repos\Py_Final030222\obj\Debug\Py_Final030222.vistas.FrmConsultaMaestro.resources
+C:\Users\MARTIN\source\repos\Py_Final030222\obj\Debug\Py_Final030222.csproj.GenerateResource.cache
+C:\Users\MARTIN\source\repos\Py_Final030222\obj\Debug\Py_Final030222.csproj.CoreCompileInputs.cache
+C:\Users\MARTIN\source\repos\Py_Final030222\obj\Debug\Py_Final030222.exe
+C:\Users\MARTIN\source\repos\Py_Final030222\obj\Debug\Py_Final030222.pdb
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\bin\Debug\Py_Final030222.exe.config
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\bin\Debug\Py_Final030222.exe
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\bin\Debug\Py_Final030222.pdb
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\obj\Debug\Py_Final030222.csproj.AssemblyReference.cache
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\obj\Debug\Py_Final030222.Properties.Resources.resources
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\obj\Debug\Py_Final030222.vistas.FrmConsultaMaestro.resources
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\obj\Debug\Py_Final030222.csproj.GenerateResource.cache
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\obj\Debug\Py_Final030222.csproj.CoreCompileInputs.cache
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\obj\Debug\Py_Final030222.exe
+C:\Users\MARTIN\Desktop\Examen Final 03-02-22\Py_Final030222\obj\Debug\Py_Final030222.pdb
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final030222.csproj.AssemblyReference.cache
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final030222.Properties.Resources.resources
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final030222.vistas.FrmConsultaMaestro.resources
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final030222.csproj.GenerateResource.cache
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final030222.csproj.CoreCompileInputs.cache
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final030222.exe
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final030222.pdb

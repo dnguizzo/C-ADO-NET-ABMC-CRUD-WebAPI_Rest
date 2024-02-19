@@ -1,0 +1,35 @@
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final030222.Properties.Resources.resources
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final030222.vistas.FrmConsultaMaestro.resources
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final140222.csproj.GenerateResource.cache
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final030222\obj\Debug\Py_Final140222.csproj.CoreCompileInputs.cache
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final030222.Properties.Resources.resources
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final030222.vistas.FrmConsultaMaestro.resources
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.csproj.GenerateResource.cache
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.csproj.CoreCompileInputs.cache
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final140222\bin\Debug\Py_Final030222.exe.config
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final140222\bin\Debug\Py_Final030222.exe
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final140222\bin\Debug\Py_Final030222.pdb
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final030222.exe
+C:\Users\MARTIN\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final030222.pdb
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\bin\Debug\Py_Final030222.exe.config
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\bin\Debug\Py_Final030222.exe
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\bin\Debug\Py_Final030222.pdb
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.csproj.AssemblyReference.cache
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final030222.Properties.Resources.resources
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final030222.vistas.FrmConsultaMaestro.resources
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.csproj.GenerateResource.cache
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.csproj.CoreCompileInputs.cache
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final030222.exe
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final030222.pdb
+C:\Users\Win 10\Desktop\Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final030222.vistas.FrmProyecto.resources
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.csproj.AssemblyReference.cache
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.Properties.Resources.resources
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.FrontEnd.Vistas.FrmConsultaMaestro.resources
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.FrontEnd.Vistas.FrmDetalleProyecto.resources
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.csproj.GenerateResource.cache
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.csproj.CoreCompileInputs.cache
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\bin\Debug\Py_Final140222.exe.config
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\bin\Debug\Py_Final140222.exe
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\bin\Debug\Py_Final140222.pdb
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.exe
+D:\Diego\UTN - PROGRAMACIÓN\PROGRAMACION\2 Cuatrimestre\Programacion II\2022\Practica de exámen\Software-Consulta-Examen Final 14-02-22\Py_Final140222\obj\Debug\Py_Final140222.pdb
